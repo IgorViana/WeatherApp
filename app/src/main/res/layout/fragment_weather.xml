@@ -5,12 +5,105 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/mainWeather"
-        android:layout_width="wrap_content"
+        android:id="@+id/weatherCity"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/weatherDate"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/weatherCity"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/weatherCity"
+        app:layout_constraintTop_toBottomOf="@+id/weatherCity" />
+
+    <ImageView
+        android:id="@+id/weatherIcon"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="8dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherDate"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/weatherMain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="Text"
+        android:textAlignment="gravity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/weatherIcon"
+        app:layout_constraintTop_toTopOf="@+id/weatherIcon" />
+
+    <TextView
+        android:id="@+id/weatherTemperature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/weatherIcon"
+        app:layout_constraintTop_toBottomOf="@+id/weatherMain" />
+
+    <TextView
+        android:id="@+id/txtTempMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Min"
+        app:layout_constraintEnd_toEndOf="@+id/weatherTemperature"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/weatherTemperature"
+        app:layout_constraintTop_toBottomOf="@+id/weatherTemperature" />
+
+    <TextView
+        android:id="@+id/txtTempMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Max"
+        app:layout_constraintEnd_toEndOf="@+id/weatherTemperature"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@+id/weatherTemperature"
+        app:layout_constraintTop_toBottomOf="@+id/weatherTemperature" />
+
+    <TextView
+        android:id="@+id/tempMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/txtTempMin"
+        app:layout_constraintStart_toStartOf="@+id/txtTempMin"
+        app:layout_constraintTop_toBottomOf="@+id/txtTempMin" />
+
+    <TextView
+        android:id="@+id/tempMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/txtTempMax"
+        app:layout_constraintStart_toStartOf="@+id/txtTempMax"
+        app:layout_constraintTop_toBottomOf="@+id/txtTempMax" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

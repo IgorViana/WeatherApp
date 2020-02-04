@@ -1,7 +1,26 @@
 package com.example.android.bringyouumbrella.model
 
-data class WeatherResponse(val weather: List<Weather>)
+import com.google.gson.annotations.SerializedName
 
+data class WeatherResponse(
+    val coord: Coordinates,
+    val weather: List<Weather>,
+    val base: String,
+    val main: Main,
+    val visibility: Int,
+    val wind: Wind,
+    val clouds: Clouds,
+    val dt: Long,
+    val sys: Sys,
+    val id: Int,
+    val name: String,
+    val cod: Int
+)
+
+data class Coordinates(
+    val lon: Double,
+    val lat: Double
+)
 
 data class Weather(
     val id: Int,
@@ -10,48 +29,27 @@ data class Weather(
     val icon: String
 )
 
-/*
-  {
-  "coord": {
-    "lon": -122.08,
-    "lat": 37.39
-  },
-  "weather": [
-    {
-      "id": 800,
-      "main": "Clear",
-      "description": "clear sky",
-      "icon": "01d"
-    }
-  ],
-  "base": "stations",
-  "main": {
-    "temp": 282.55,
-    "feels_like": 281.86,
-    "temp_min": 280.37,
-    "temp_max": 284.26,
-    "pressure": 1023,
-    "humidity": 100
-  },
-  "visibility": 16093,
-  "wind": {
-    "speed": 1.5,
-    "deg": 350
-  },
-  "clouds": {
-    "all": 1
-  },
-  "dt": 1560350645,
-  "sys": {
-    "type": 1,
-    "id": 5122,
-    "message": 0.0139,
-    "country": "US",
-    "sunrise": 1560343627,
-    "sunset": 1560396563
-  },
-  "timezone": -25200,
-  "id": 420006353,
-  "name": "Mountain View",
-  "cod": 200
-}*/
+data class Main(
+    val temp: Double,
+    @SerializedName("feels_like") val feelsLike: Double,
+    @SerializedName("temp_min") val tempMin: Double,
+    @SerializedName("temp_max") val tempMax: Double,
+    val pressure: Int,
+    val humidity: Int
+)
+
+data class Wind(
+    val speed: Double,
+    val deg: Int
+)
+
+data class Clouds(val all: Int)
+
+data class Sys(
+    val type: Int,
+    val id: Int,
+    val message: Double,
+    val country: String,
+    val sunrise: Int,
+    val sunset: Int
+)
